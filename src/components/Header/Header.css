@@ -15,6 +15,13 @@
 .navbar-background{
    background-color: rgba(5, 32, 70, .8);
 }
+.offCanvas-background{
+    background-color: rgba(32, 58, 95, 1);
+}
+.btn-close{
+    /* color: white !important; */
+    background-color: white;
+}
 .bar-style{
     color: white !important;
 }

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 const Services = () => {
     const [cars, setCars] = useState([])
@@ -23,7 +25,7 @@ const Services = () => {
                                     <p className="card-text">{car.desc.slice(0, 100)}</p>
                                     <h4 className="price">Price: ${car.price}</h4>
                                 </div>
-                                <button className="buyBtn py-1">Buy Now</button>
+                                <NavLink style={{ backgroundColor: '#aaa9d6', color: '#2c4964' }} className="btn btn-lg block" to={`/orderPlace/${car._id}`}>Buy Now</NavLink>
                             </div>
 
 

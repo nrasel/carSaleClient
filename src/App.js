@@ -10,25 +10,41 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Explore from './components/Explore/Explore';
 import Footer from './components/Footer/Footer';
+import OrderPlace from './components/OrderPlace/OrderPlace';
+import Login from './components/Login/Login';
+import AuthProvider from './context/AuthProvider';
+import Registration from './components/Registration/Registration';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/explore">
-            <Explore />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path="/home">
+              <Home />
+            </Route>
+            <Route exact path="/explore">
+              <Explore />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/registration">
+              <Registration />
+            </Route>
+            <PrivateRoute path="/orderPlace/:id">
+              <OrderPlace />
+            </PrivateRoute>
+            <Route exact path="/">
+              <Home />
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
