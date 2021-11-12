@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Tata Skoda",
+        "desc": "Skoda has currently 4 car models on sale in India, get a complete price list of Skoda cars, read expert reviews",
+        "price": 3000,
+        "img": "https://i.ibb.co/rm4sJXb/9.png"
+    },
+    {
+        "name": "MG Motor Mercedes Benz",
+        "desc": "he MG 5 was originally unveiled at the 2011 Shanghai Auto Show as a concept model.[30][31] It is a Ford Focus-sized hatchback using the same platform as the Roewe 350, It was released for sale in China in 2012 but has never been exported to the UK.",
+        "price": 4000,
+        "img": "https://i.ibb.co/vhhPR0j/10.png"
+    },
+    {
+        "name": "Land Rover Kia",
+        "desc": " Land Rover Discovery. Although Kia has been manufacturing models that have moved considerably upmarket from the Spectras and",
+        "price": 6000,
+        "img": "https://i.ibb.co/CBpQ8gy/11.png"
+    },
+    {
+        "name": "BMW Maruti Suzuki",
+        "desc": "Compare BMW 3 Series Vs New Maruti Suzuki Swift to know which is better. Detailed cars comparison on BMW 3 Series vs New Maruti Suzuki Swift compare price",
+        "price": 5000,
+        "img": "https://i.ibb.co/phrbX01/12.png"
+    },
+    {
+        "name": "Honda Mahindra",
+        "desc": "Mahindra Two Wheelers Limited (MTWL) was established in 2008 after the parent company Mahindra & Mahindra Limited acquired select assets of Kinetic",
+        "price": 2000,
+        "img": "https://i.ibb.co/kDc9tbN/13.png"
+    },
+    {
+        "name": "Nissan Ford",
+        "desc": "Relationships with other car companies[edit]. Nissan Main Office. Ford Motor Company. In Australia, between 1989 and 1992, Nissan Australia shared models",
+        "price": 100,
+        "img": "https://i.ibb.co/V2gFTSP/14.png"
+    },
+    {
+        "name": "Renault Datsun",
+        "desc": "Renault KWID Price starts at Rs. 4.11 Lakh which is Rs. 27,700 costlier than base model of Datsun redi-GO priced at Rs. 3.83 Lakh.",
+        "price": 8000,
+        "img": " https://i.ibb.co/3vZH9CN/images-1.jpg"
+    },
+    {
+        "name": "Mahindra",
+        "desc": "Mahindra is a billion-dollar global enterprise headquartered in India, which is driven by innovation & compassion. Visit our official website to know more!",
+        "price": 9000,
+        "img": "https://i.ibb.co/yNxSVHd/images-2.jpg"
+    },
+    {
+        "name": "Tata Punch",
+        "desc": "Tata Punch – All New SUV 2021 : Tata Punch the first SUV built on ALFA-ARC platform designed for the next generation users/ Explore features, specifications",
+        "price": 6500,
+        "img": "https://i.ibb.co/Rym8MM2/images-3.jpg"
+    },
+    {
+        "name": "Altroz",
+        "desc": "Tata Altroz is a 5 seater Hatchback available in a price range of Rs. 5.84 - 9.59 Lakh*. It is available in 20 variants, 2 engine options that are BS6 compliant",
+        "price": 4500,
+        "img": "https://i.ibb.co/CsqZYmX/images.jpg"
+    }
+]

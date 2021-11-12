@@ -1,0 +1,27 @@
+/* navbar section */
+.nav-color{
+    color: #2c4964;
+}
+.navbar-brand{
+    font-size: 30px;
+    color: #e22937 !important;
+}
+.navbar{
+    border-bottom: 1px solid rgb(226, 233, 226);
+}
+.nav-item .nav-link{
+    color: white;
+}
+.navbar-background{
+   background-color: rgba(5, 32, 70, .8);
+}
+.bar-style{
+    color: white !important;
+}
+.log-out{
+    background: #1977cc;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 10px;
+}

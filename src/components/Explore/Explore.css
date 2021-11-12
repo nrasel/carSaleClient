@@ -1,0 +1,17 @@
+
+.buyBtn{
+    border: none;
+    font-size: 19px;
+    background-color: rgb(207, 209, 209);
+}
+.price{
+    color: #28a745;
+    font-size: 24px;
+}
+.card-title{
+    color: #052046;
+    font-size: 28px;
+}
+.card-text{
+    color: #646464;
+}
