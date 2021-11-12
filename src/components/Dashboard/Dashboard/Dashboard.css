@@ -1,0 +1,7 @@
+.admin-link-style{
+    color: rgba(5, 32, 70, 1);
+    text-decoration: none;
+}
+.admin-link-style button{
+    font-size: 18px !important;
+}

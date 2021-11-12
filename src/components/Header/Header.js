@@ -30,8 +30,12 @@ const Header = () => {
                                         <NavLink className="nav-link" to="/explore">Explore</NavLink>
                                     </li>
                                     <li className="nav-item">
+                                        <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
+                                    </li>
+                                    <li className="nav-item">
                                         <span className="nav-link">{user.displayName} </span>
                                     </li>
+
                                     {user?.email ?
                                         <li className="nav-item">
                                             <button onClick={logOut} className="log-out">Log Out</button>
@@ -52,6 +56,9 @@ const Header = () => {
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/explore">Explore</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <span className="nav-link">{user.displayName} </span>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 
+
 const Services = () => {
     const [cars, setCars] = useState([])
     useEffect(() => {
@@ -27,13 +28,9 @@ const Services = () => {
                                 </div>
                                 <NavLink style={{ backgroundColor: '#aaa9d6', color: '#2c4964' }} className="btn btn-lg block" to={`/orderPlace/${car._id}`}>Buy Now</NavLink>
                             </div>
-
-
                         </div>
                     )
                 }
-
-
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const OrderPlace = () => {
     const { id } = useParams()
@@ -55,7 +55,7 @@ const OrderPlace = () => {
                                 <p className="card-text">{desc}</p>
                                 <h4 className="price">Price: ${price}</h4>
                             </div>
-                            <Link to="/home"><button className="buyBtn py-1">Back</button></Link>
+                            <NavLink style={{ backgroundColor: '#aaa9d6', color: '#2c4964' }} className="btn btn-lg block" to="/explore">Back To Explore</NavLink>
                         </div>
                     </div>
                     <div className="col">
