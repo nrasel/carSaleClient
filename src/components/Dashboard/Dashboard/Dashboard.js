@@ -6,13 +6,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-import Avatar from '@mui/material/Avatar';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -23,6 +16,9 @@ import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AddProduct from '../AddProduct/AddProduct';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import './Dashboard.css'
+import Pay from '../Pay/Pay';
+import MyOrders from '../MyOrders/MyOrders';
+import ReviewAdd from '../ReviewAdd/ReviewAdd';
 
 const drawerWidth = 250;
 
@@ -38,14 +34,29 @@ function Dashboard(props) {
 
     const drawer = (
         <div>
-            {/* pay,My Orders, Review, Logout */}
+            {/* pay Logout */}
             <Toolbar />
             <Divider />
             <Box sx={{ textAlign: 'left', pl: 2 }}>
+                {/* admin feature */}
+
                 <Link className="admin-link-style" to={`${url}/manageAllOrders`}><Button color="inherit"><span><i class="fas fa-list"></i></span> Manage Orders</Button></Link>
+                <br />
                 <Link className="admin-link-style" to={`${url}/addProduct`}><Button color="inherit"><span><i class="fas fa-file-medical"></i></span> Add Product</Button></Link>
+                <br />
                 <Link className="admin-link-style" to={`${url}/makeAdmin`}><Button color="inherit"><span><i class="fas fa-user-plus"></i></span> Make Admin</Button></Link>
+                <br />
                 <Link className="admin-link-style" to={`${url}/manageProducts`}><Button color="inherit"><span><i class="fas fa-cog"></i></span> Manage Products</Button></Link>
+
+
+
+                {/* user feature */}
+                <Link className="admin-link-style" to={`${url}/pay`}><Button color="inherit"><span><i class="fas fa-cog"></i></span> pay</Button></Link>
+                <br />
+                <Link className="admin-link-style" to={`${url}/myOrders`}><Button color="inherit"><span><i class="fas fa-cog"></i></span> My Orders</Button></Link>
+                <br />
+                <Link className="admin-link-style" to={`${url}/review`}><Button color="inherit"><span><i class="fas fa-cog"></i></span> Review</Button></Link>
+
             </Box>
 
         </div>
@@ -122,6 +133,7 @@ function Dashboard(props) {
                 <Toolbar />
 
                 <Switch>
+                    {/* admin route */}
                     <Route path={`${path}/manageAllOrders`}>
                         <ManageAllOrders />
                     </Route>
@@ -133,6 +145,17 @@ function Dashboard(props) {
                     </Route>
                     <Route path={`${path}/manageProducts`}>
                         <ManageProducts />
+                    </Route>
+
+                    {/* user route */}
+                    <Route path={`${path}/pay`}>
+                        <Pay />
+                    </Route>
+                    <Route path={`${path}/myOrders`}>
+                        <MyOrders />
+                    </Route>
+                    <Route path={`${path}/review`}>
+                        <ReviewAdd />
                     </Route>
                 </Switch>
 
