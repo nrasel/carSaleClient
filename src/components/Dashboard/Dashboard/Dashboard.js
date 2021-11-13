@@ -9,8 +9,10 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
+import { Switch, Route, NavLink, useRouteMatch } from "react-router-dom";
 import { Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AddProduct from '../AddProduct/AddProduct';
@@ -32,6 +34,10 @@ function Dashboard(props) {
         setMobileOpen(!mobileOpen);
     };
 
+    const activeStyle = {
+        color: 'rgba(32, 58, 95, .9)'
+    }
+
     const drawer = (
         <div>
             {/* pay Logout */}
@@ -40,22 +46,34 @@ function Dashboard(props) {
             <Box sx={{ textAlign: 'left', pl: 2 }}>
                 {/* admin feature */}
 
-                <Link className="admin-link-style" to={`${url}/manageAllOrders`}><Button color="inherit"><span><i class="fas fa-list"></i></span> Manage Orders</Button></Link>
-                <br />
-                <Link className="admin-link-style" to={`${url}/addProduct`}><Button color="inherit"><span><i class="fas fa-file-medical"></i></span> Add Product</Button></Link>
-                <br />
-                <Link className="admin-link-style" to={`${url}/makeAdmin`}><Button color="inherit"><span><i class="fas fa-user-plus"></i></span> Make Admin</Button></Link>
-                <br />
-                <Link className="admin-link-style" to={`${url}/manageProducts`}><Button color="inherit"><span><i class="fas fa-cog"></i></span> Manage Products</Button></Link>
+                <NavLink activeStyle
+                    ={activeStyle} className="admin-link-style" style={{ display: 'block', width: '100%', marginTop: '30px' }} to={`${url}/manageAllOrders`}><Button color="inherit"><span><i className="fas fa-list"></i></span> Manage Orders</Button></NavLink>
 
+                <NavLink activeStyle
+                    ={activeStyle} className="admin-link-style" to={`${url}/addProduct`}><Button color="inherit"><span><i className="fas fa-file-medical"></i></span> Add Product</Button></NavLink>
+                <br />
+                <NavLink activeStyle
+                    ={activeStyle} className="admin-link-style" to={`${url}/makeAdmin`}><Button color="inherit"><span><i className="fas fa-user-plus"></i></span> Make Admin</Button></NavLink>
+                <br />
+                <NavLink activeStyle
+                    ={activeStyle} className="admin-link-style" to={`${url}/manageProducts`}><Button color="inherit"><span><i className="fas fa-cog"></i></span> Manage Products</Button></NavLink>
 
 
                 {/* user feature */}
-                <Link className="admin-link-style" to={`${url}/pay`}><Button color="inherit"><span><i class="fas fa-cog"></i></span> pay</Button></Link>
+                <NavLink activeStyle
+                    ={activeStyle} className="admin-link-style" to={`${url}/pay`}><Button color="inherit"><span><i className="fab fa-cc-amazon-pay"></i></span>  Payment</Button></NavLink>
                 <br />
-                <Link className="admin-link-style" to={`${url}/myOrders`}><Button color="inherit"><span><i class="fas fa-cog"></i></span> My Orders</Button></Link>
+                <NavLink activeStyle
+                    ={activeStyle} className="admin-link-style" to={`${url}/myOrders`}><Button color="inherit"><span><i className="fas fa-cog"></i></span> My Orders</Button></NavLink>
                 <br />
-                <Link className="admin-link-style" to={`${url}/review`}><Button color="inherit"><span><i class="fas fa-cog"></i></span> Review</Button></Link>
+                <NavLink activeStyle
+                    ={activeStyle} className="admin-link-style" to={`${url}/review`}><Button color="inherit"><span> <i className="fas fa-star"></i></span> Review</Button></NavLink>
+                <br />
+                <br />
+                <br />
+                <br />
+                <NavLink className="admin-link-style" to="/home"> <Button variant="contained"><span><i class="fas fa-hand-point-left"></i></span>
+                    Back To Home</Button></NavLink>
 
             </Box>
 
@@ -77,19 +95,19 @@ function Dashboard(props) {
                 }}
             >
 
-                <Toolbar style={{ backgroundColor: 'rgba(5, 32, 70, 1)' }}>
+                <Toolbar style={{ backgroundColor: 'white', boxShadow: '1px 1px 3px rgb(0 0 0 / 10%)' }}>
 
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
                         edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
+                        sx={{ mr: 2, display: { sm: 'none' }, color: 'rgba(32, 58, 95, .9)' }}
                     >
 
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
+                    <Typography variant="h6" sx={{ color: 'rgba(32, 58, 95, 1)' }} noWrap component="div">
                         Dashboard
                     </Typography>
                 </Toolbar>
@@ -126,7 +144,7 @@ function Dashboard(props) {
                     {drawer}
                 </Drawer>
             </Box>
-            <Box
+            <Box style={{ backgroundColor: '#f4f7fc', paddingBottom: '300px' }}
                 component="main"
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >

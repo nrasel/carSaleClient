@@ -9,7 +9,7 @@ const Services = () => {
         fetch('http://localhost:5000/homeCars')
             .then(res => res.json())
             .then(data => setCars(data))
-    }, [])
+    }, [cars])
     return (
         <div className="container mt-4">
             <h2 style={{ color: '#052046', fontSize: '40px' }}>Buy Your Dream Car</h2>
@@ -26,7 +26,7 @@ const Services = () => {
                                     <p className="card-text">{car.desc.slice(0, 100)}</p>
                                     <h4 className="price">Price: ${car.price}</h4>
                                 </div>
-                                <NavLink style={{ backgroundColor: '#aaa9d6', color: '#2c4964' }} className="btn btn-lg block" to={`/orderPlace/${car._id}`}>Buy Now</NavLink>
+                                <NavLink style={{ backgroundColor: '#aaa9d6', color: '#2c4964' }} className="btn btn-lg block" to={`/orderPlace/${car._id}`}><i class="fas fa-shopping-cart"></i> Buy Now</NavLink>
                             </div>
                         </div>
                     )

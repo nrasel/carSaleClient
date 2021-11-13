@@ -6,6 +6,9 @@ import './Header.css'
 
 const Header = () => {
     const { user, logOut } = useAuth()
+    const activeStyle = {
+        color: "rgb(200, 200, 200)"
+    }
     return (
         <div>
             <section>
@@ -24,13 +27,13 @@ const Header = () => {
 
                                 <ul className="navbar-nav ms-auto mb-2 d-lg-none mb-lg-0">
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" aria-current="page" to="/home">Home</NavLink>
+                                        <NavLink activeStyle={activeStyle} className="nav-link" aria-current="page" to="/home">Home</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/explore">Explore</NavLink>
+                                        <NavLink activeStyle={activeStyle} className="nav-link" to="/explore">Explore</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
+                                        <NavLink activeStyle={activeStyle} className="nav-link" to="/dashboard">Dashboard</NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <span className="nav-link">{user.displayName} </span>
@@ -38,7 +41,7 @@ const Header = () => {
 
                                     {user?.email ?
                                         <li className="nav-item">
-                                            <button onClick={logOut} className="log-out">Log Out</button>
+                                            <button onClick={logOut} className="log-out"><i class="fas fa-sign-out-alt"></i> Log Out</button>
                                         </li>
                                         :
                                         <li className="nav-item">
@@ -52,10 +55,10 @@ const Header = () => {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <NavLink className="nav-link " aria-current="page" to="/home">Home</NavLink>
+                                    <NavLink activeStyle={activeStyle} className="nav-link " aria-current="page" to="/home">Home</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/explore">Explore</NavLink>
+                                    <NavLink activeStyle={activeStyle} className="nav-link" to="/explore">Explore</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
@@ -65,7 +68,7 @@ const Header = () => {
                                 </li>
                                 {user?.email ?
                                     <li className="nav-item">
-                                        <button onClick={logOut} className="log-out">Log Out</button>
+                                        <button onClick={logOut} className="log-out"><i class="fas fa-sign-out-alt"></i> Log Out</button>
                                     </li>
                                     :
                                     <li className="nav-item">

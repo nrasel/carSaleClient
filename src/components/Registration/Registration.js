@@ -1,14 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const Registration = () => {
     const { userRegistration } = useAuth()
+    const history = useHistory()
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        userRegistration(data?.email, data?.password, data?.name)
+        userRegistration(data?.email, data?.password, data?.name, history)
         reset()
     };
     return (

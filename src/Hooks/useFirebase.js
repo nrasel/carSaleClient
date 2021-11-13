@@ -10,7 +10,7 @@ const useFirebase = () => {
     const [authError, setAuthError] = useState('')
     const auth = getAuth();
     // create user with gmail and password
-    const userRegistration = (email, password, name) => {
+    const userRegistration = (email, password, name, history) => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -25,6 +25,7 @@ const useFirebase = () => {
                 }).catch((error) => {
 
                 });
+                history.replace('/')
             })
             .catch((error) => {
                 setAuthError(error.message)
