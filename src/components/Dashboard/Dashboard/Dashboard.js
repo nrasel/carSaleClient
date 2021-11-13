@@ -11,8 +11,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Switch, Route, NavLink, useRouteMatch } from "react-router-dom";
 import { Button } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { purple } from '@mui/material/colors';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AddProduct from '../AddProduct/AddProduct';

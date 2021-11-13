@@ -8,7 +8,7 @@ const OrderPlace = () => {
     const { id } = useParams()
     const [orders, setOrders] = useState({})
     const { user } = useAuth()
-    const { _id, name, img, price, desc } = orders
+    const { name, img, price, desc } = orders
     useEffect(() => {
         fetch(`http://localhost:5000/cars/${id}`)
             .then(res => res.json())
@@ -59,6 +59,8 @@ const OrderPlace = () => {
                                 <h4 className="price">Price: ${price}</h4>
                             </div>
                             <NavLink style={{ backgroundColor: '#aaa9d6', color: '#2c4964' }} className="btn btn-lg block" to="/explore">Back To Explore</NavLink>
+                            <br />
+                            <NavLink style={{ backgroundColor: '#aaa9d6', color: '#2c4964' }} className="btn btn-lg block" to="/dashboard">Dashnoard</NavLink>
                         </div>
                     </div>
                     <div className="col">
