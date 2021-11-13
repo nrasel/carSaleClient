@@ -8,6 +8,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const [authError, setAuthError] = useState('')
+    const [admin, setAdmin] = useState(false)
     const auth = getAuth();
     // create user with gmail and password
     const userRegistration = (email, password, name, history) => {
@@ -25,7 +26,7 @@ const useFirebase = () => {
                 }).catch((error) => {
 
                 });
-                history.replace('/')
+                history.replace('/dashboard')
             })
             .catch((error) => {
                 setAuthError(error.message)
@@ -37,7 +38,7 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setAuthError('')
-                const destination = location?.state?.from || '/'
+                const destination = location?.state?.from || '/dashboard'
                 history.replace(destination)
             }).catch((error) => {
                 setAuthError(error.message)
@@ -58,16 +59,16 @@ const useFirebase = () => {
         return unsubscribe;
     }, [auth])
 
-    const saveUser = (email, displayName) => {
-        const user = { email, displayName }
-        fetch('http://localhost:5000/users', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-    }
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setAdmin(data.admin)
+            })
+    }, [user.email])
+
+
 
     const logOut = () => {
         signOut(auth).then(() => {
@@ -79,6 +80,19 @@ const useFirebase = () => {
     }
 
 
+    const saveUser = (email, displayName) => {
+        const user = { email, displayName }
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+    }
+
+
+
 
     return {
         user,
@@ -86,7 +100,8 @@ const useFirebase = () => {
         isLoading,
         userRegistration,
         authError,
-        loginUser
+        loginUser,
+        admin
     }
 }
 
