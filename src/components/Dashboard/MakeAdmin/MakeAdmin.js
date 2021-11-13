@@ -2,25 +2,24 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const MakeAdmin = () => {
-    const [email, setEmail] = useState('')
+
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        setEmail(data.email)
-        const user = email
+        console.log(data)
         fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify(data.email)
         })
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    alert('Make Admin Successful!')
+                    console.log(data);
+                    alert('Make Admin Successful')
                     reset()
                 }
-
             })
 
     };

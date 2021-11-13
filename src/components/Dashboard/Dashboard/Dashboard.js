@@ -19,6 +19,7 @@ import './Dashboard.css'
 import Pay from '../Pay/Pay';
 import MyOrders from '../MyOrders/MyOrders';
 import ReviewAdd from '../ReviewAdd/ReviewAdd';
+import useAuth from '../../../Hooks/useAuth'
 
 const drawerWidth = 250;
 
@@ -26,6 +27,7 @@ function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     // const { admin } = useAuth()
+    const { logOut } = useAuth()
     let { path, url } = useRouteMatch();
 
     const handleDrawerToggle = () => {
@@ -65,7 +67,10 @@ function Dashboard(props) {
                     ={activeStyle} className="admin-link-style" to={`${url}/myOrders`}><Button color="inherit"><span><i className="fas fa-cog"></i></span> My Orders</Button></NavLink>
                 <br />
                 <NavLink activeStyle
-                    ={activeStyle} className="admin-link-style" to={`${url}/review`}><Button color="inherit"><span> <i className="fas fa-star"></i></span> Review</Button></NavLink>
+                    ={activeStyle} className="admin-link-style" to={`${url}/review`}><Button color="inherit"><span> <i className="fas fa-star"></i></span> Add Review</Button></NavLink>
+
+                <NavLink activeStyle
+                    ={activeStyle} className="admin-link-style" to={`${url}/review`}><Button onClick={logOut} color="inherit"><span> <i class="fas fa-sign-out-alt"></i></span>  Log Out</Button></NavLink>
                 <br />
                 <br />
                 <br />

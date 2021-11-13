@@ -1,41 +1,50 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import { Container, Paper } from '@mui/material';
-import Typography from '@mui/material/Typography';
-import Card from '@mui/material/Card';
+import React, { useState, useEffect } from 'react';
+import Rating from 'react-rating';
+import useAuth from '../../Hooks/useAuth'
+import './Reviews.css'
 
 const Reviews = () => {
+    const { user } = useAuth()
+    const [reviews, setReviews] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [reviews])
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <Container>
-                <Typography sx={{ fontWeight: 600, m: 5 }} variant="h4" component="div">
-                    Reviews
-                </Typography>
-                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                    <Grid item xs={4} sm={4} md={4}>
-                        <Card sx={{ minWidth: 275, border: 0, boxShadow: 0 }}>
+        <div className="container mt-4">
+            <h2 style={{ color: '#052046', fontSize: '40px' }}>Check Out OurReviews</h2>
+            <div className="row row-cols-1 row-cols-md-4 g-4">
 
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    flexWrap: 'wrap',
-                                    '& > :not(style)': {
-                                        m: 1,
-                                        width: 128,
-                                        height: 128,
-                                    },
-                                }}
-                            >
+                {
+                    reviews.map(review =>
+                        <div className="col">
+                            <div className="card h-100 card-style border-0 text-start">
+                                <div className="card-body">
+                                    <h5 className="card-title">{user.displayName}</h5>
+                                    <h6 style={{ color: '#28a745', fontSize: '17px' }} className="">{user.email}</h6>
+                                    <p className="card-text">{review.desc}</p>
+                                    <Rating
+                                        initialRating={review.review}
+                                        emptySymbol="far fa-star start-style"
+                                        fullSymbol="fas fa-star start-style"
+                                        readonly
+                                    />
+                                    <span className="ms-3">{review.review}/5</span>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                }
+            </div>
+        </div>
 
-                                <Paper elevation={3} >paper</Paper>
-                            </Box>
-                        </Card>
-                    </Grid>
-                </Grid>
-            </Container>
-        </Box>
     );
 };
 
 export default Reviews;
+
+
+/*
+
+*/
