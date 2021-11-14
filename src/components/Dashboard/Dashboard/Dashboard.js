@@ -22,6 +22,7 @@ import ReviewAdd from '../ReviewAdd/ReviewAdd';
 import useAuth from '../../../Hooks/useAuth'
 import AdminRoute from '../../AdminRoute/AdminRoute';
 import Profile from '../Profile/Profile';
+import '../../Header/Header.css'
 
 const drawerWidth = 250;
 
@@ -64,8 +65,9 @@ function Dashboard(props) {
                     <NavLink activeStyle
                         ={activeStyle} className="admin-link-style" to={`${url}/manageProducts`}><Button color="inherit"><span><i className="fas fa-cog"></i></span> Manage Products</Button></NavLink>
 
-                    <NavLink activeStyle
-                        ={activeStyle} className="admin-link-style" to={`${url}/review`}><Button onClick={logOut} color="inherit"><span> <i class="fas fa-sign-out-alt"></i></span>  Log Out</Button></NavLink>
+                    <br />
+                    <br />
+                    <button className="log-out" onClick={logOut} ><span> <i class="fas fa-sign-out-alt"></i></span>  Log Out</button>
 
 
                     <br />
@@ -89,8 +91,8 @@ function Dashboard(props) {
                         <NavLink activeStyle
                             ={activeStyle} className="admin-link-style" to={`${url}/pay`}><Button color="inherit"><span><i className="fab fa-cc-amazon-pay"></i></span>  Payment</Button></NavLink>
                         <br />
-
-                        <Button onClick={logOut} color="inherit"><span> <i class="fas fa-sign-out-alt"></i></span>  Log Out</Button>
+                        <br />
+                        <button className="log-out" onClick={logOut}><span> <i class="fas fa-sign-out-alt"></i></span>  Log Out</button>
                         <br />
                         <br />
                         <br />
@@ -141,6 +143,7 @@ function Dashboard(props) {
                     <Typography variant="h6" sx={{ color: 'rgba(32, 58, 95, 1)' }} noWrap component="div">
                         Dashboard
                     </Typography>
+
 
                 </Toolbar>
 

@@ -19,7 +19,7 @@ const Reviews = () => {
                 {
                     reviews.map(review =>
                         <div className="col">
-                            <div className="card h-100 card-style border-0 text-start">
+                            <div style={{ boxShadow: '0 .5rem 1rem rgba(0,0,0,.15)', padding: '30px 0', borderRadius: '10px' }} className="card h-100 card-style border-0 text-start">
                                 <div className="card-body">
                                     <h5 className="card-title">{user.displayName}</h5>
                                     <h6 style={{ color: '#28a745', fontSize: '17px' }} className="">{user.email}</h6>

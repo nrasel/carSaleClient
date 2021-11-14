@@ -1,11 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import useAuth from '../../../Hooks/useAuth'
 
@@ -35,36 +28,30 @@ const MyOrders = () => {
 
     }
     return (
-        <TableContainer component={Paper} style={{ maxWidth: '60rem' }}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Product Id</TableCell>
-                        <TableCell align="left">Product Name</TableCell>
-                        <TableCell align="left">Price</TableCell>
-                        <TableCell align="left">Status</TableCell>
-                        <TableCell align="left">Action</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
+        <div >
+            <div className="container">
+                <div className="row row-cols-1 row-cols-md-2 mt-5 pt-5 g-4">
                     {orders.filter(order => order.userEmail === user.email).map((order) => (
-                        <TableRow
-                            key={order._id}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                            <TableCell component="th" scope="row">
-                                {order._id}
-                            </TableCell>
-                            <TableCell align="left">{order.productName}</TableCell>
-                            <TableCell align="left">$ {order.productPrice}</TableCell>
-                            <TableCell align="left">{order.status}</TableCell>
-                            <TableCell align="left"><Button onClick={() => handleDelete(order._id)} style={{ backgroundColor: '#990000' }} variant="contained">Cancel</Button></TableCell>
-                        </TableRow>
+                        <div className="col">
+                            <div style={{ boxShadow: '0 .5rem 1rem rgba(0,0,0,.15)', borderRadius: '20px' }} className="card h-100 p-4 card-style border-0 text-start">
+                                <img style={{ width: '120px', height: '120px', margin: 'auto', borderRadius: '50%' }} src={order.productImg} alt="" />
+                                <div className="card-body">
+                                    <h5 style={{ color: '#304461' }}> {order.productName}</h5>
+                                    <p className="card-text">Price : ${order.productPrice}</p>
+                                    <h6 style={{ color: '#28a745' }}>{order.status}</h6>
+                                </div>
+                                <Button onClick={() => handleDelete(order._id)} style={{ backgroundColor: '#990000' }} variant="contained">Cancel</Button>
+                            </div>
+                        </div>
                     ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                </div>
+            </div>
+        </div>
+
     );
 };
 
 export default MyOrders;
+
+
+// <Button onClick={() => handleDelete(order._id)} style={{ backgroundColor: '#990000' }} variant="contained">Cancel</Button>

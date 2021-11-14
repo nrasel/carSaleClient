@@ -50,46 +50,34 @@ const ManageAllOrders = () => {
 
 
     return (
-        <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Product Id</TableCell>
-                        <TableCell align="left">Product Name</TableCell>
-                        <TableCell align="left">Price</TableCell>
-                        <TableCell align="left">Status</TableCell>
-                        <TableCell align="left">Action</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {orders.map((order) => (
-                        <TableRow
-                            key={order._id}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                            <TableCell component="th" scope="row">
-                                {order._id}
-                            </TableCell>
-                            <TableCell align="left">{order.productName}</TableCell>
-                            <TableCell align="left">$ {order.productPrice}</TableCell>
-                            <TableCell align="left">{order.status}</TableCell>
-                            <TableCell align="left">
+        <div className="container">
+            <div className="row row-cols-1 row-cols-md-3 mt-5 pt-5 g-4">
+                {orders.map((order) => (
+                    <div className="col">
+                        <div style={{ boxShadow: '0 .5rem 1rem rgba(0,0,0,.15)', borderRadius: '20px' }} className="card h-100 p-4 card-style border-0 text-start">
+                            <img style={{ width: '100px', height: '100px', margin: 'auto', borderRadius: '50%' }} src={order.productImg} alt="" />
+                            <div className="card-body">
+                                <h5 style={{ color: '#304461' }}> {order.productName}</h5>
+                                <p className="card-text">Price : ${order.productPrice}</p>
+                                <h6 style={{ color: '#28a745' }}>{order.status}</h6>
 
-                                <Button onClick={() => handleDelete(order._id)} style={{ backgroundColor: '#990000' }} variant="contained">Cancel</Button>
+                                <button className="btn  text-white" onClick={() => handleDelete(order._id)} style={{ backgroundColor: '#990000' }} >Cancel</button>
 
                                 {order.status === 'pending' ?
-                                    <Button onClick={() => handleStatus(order._id)} style={{ backgroundColor: '#990000', marginLeft: '10px' }} variant="contained">Pending</Button>
+                                    <button className="btn text-white" onClick={() => handleStatus(order._id)} style={{ backgroundColor: '#990000' }} >Pending</button>
                                     :
-                                    <Button onClick={() => handleStatus(order._id)} style={{ backgroundColor: 'green', marginLeft: '10px' }} variant="contained">Approve</Button>
+                                    <button className="btn text-white" onClick={() => handleStatus(order._id)} style={{ backgroundColor: 'green', marginLeft: '10px' }} >Shipped</button>
                                 }
+                            </div>
 
-                            </TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div >
     );
 };
 
 export default ManageAllOrders;
+
+

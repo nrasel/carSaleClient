@@ -60,7 +60,7 @@ const OrderPlace = () => {
                             </div>
                             <NavLink style={{ backgroundColor: '#aaa9d6', color: '#2c4964' }} className="btn btn-lg block" to="/explore">Back To Explore</NavLink>
                             <br />
-                            <NavLink style={{ backgroundColor: '#aaa9d6', color: '#2c4964' }} className="btn btn-lg block" to="/dashboard">Dashnoard</NavLink>
+                            <NavLink style={{ backgroundColor: '#aaa9d6', color: '#2c4964' }} className="btn btn-lg block" to="/dashboard/myOrders">Dashnoard</NavLink>
                         </div>
                     </div>
                     <div className="col">

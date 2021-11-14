@@ -1,16 +1,23 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../../Hooks/useAuth'
 
 const ReviewAdd = () => {
+    const { user } = useAuth()
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
+        const review = {
+            ...data,
+            userName: user.displayName,
+            userEmail: user.email
+        }
         fetch('https://hidden-temple-16176.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(review)
         })
             .then(res => res.json())
             .then(data => {
