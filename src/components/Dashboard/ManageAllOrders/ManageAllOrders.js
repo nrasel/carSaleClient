@@ -14,14 +14,14 @@ const ManageAllOrders = () => {
     const [statusId, setStatusId] = useState()
     const { user } = useAuth()
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://hidden-temple-16176.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [statusId, orders])
     const handleDelete = (id) => {
         const proceed = window.confirm("Are You Sure To Delete?")
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://hidden-temple-16176.herokuapp.com/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -37,7 +37,7 @@ const ManageAllOrders = () => {
     }
 
     const handleStatus = (id) => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://hidden-temple-16176.herokuapp.com/orders/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())

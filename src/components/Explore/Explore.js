@@ -5,7 +5,7 @@ import './Explore.css'
 const Explore = () => {
     const [cars, setCars] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/cars')
+        fetch('https://hidden-temple-16176.herokuapp.com/cars')
             .then(res => res.json())
             .then(data => setCars(data))
     }, [cars])

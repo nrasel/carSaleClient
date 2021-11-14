@@ -3,17 +3,17 @@ import React, { useEffect, useState } from 'react';
 const ManageProducts = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/cars')
+        fetch('https://hidden-temple-16176.herokuapp.com/cars')
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [])
+    }, [products])
 
     console.log(products)
 
     const handleCancel = (id) => {
         const proceed = window.confirm("Are Your Sure To Delete?")
         if (proceed) {
-            fetch(`http://localhost:5000/cars/${id}`, {
+            fetch(`https://hidden-temple-16176.herokuapp.com/cars/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

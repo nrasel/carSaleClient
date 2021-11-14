@@ -26,7 +26,7 @@ const useFirebase = () => {
                 }).catch((error) => {
 
                 });
-                history.replace('/dashboard')
+                history.replace('/dashboard/profile')
             })
             .catch((error) => {
                 setAuthError(error.message)
@@ -38,11 +38,12 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setAuthError('')
-                const destination = location?.state?.from || '/dashboard'
+                const destination = location?.state?.from || '/dashboard/profile'
                 history.replace(destination)
             }).catch((error) => {
                 setAuthError(error.message)
             })
+            .finally(() => setIsLoading(false))
     }
 
 
@@ -61,7 +62,7 @@ const useFirebase = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://hidden-temple-16176.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin)
@@ -82,7 +83,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName) => {
         const user = { email, displayName }
-        fetch('http://localhost:5000/users', {
+        fetch('https://hidden-temple-16176.herokuapp.com/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

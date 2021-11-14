@@ -20,13 +20,15 @@ import Pay from '../Pay/Pay';
 import MyOrders from '../MyOrders/MyOrders';
 import ReviewAdd from '../ReviewAdd/ReviewAdd';
 import useAuth from '../../../Hooks/useAuth'
+import AdminRoute from '../../AdminRoute/AdminRoute';
+import Profile from '../Profile/Profile';
 
 const drawerWidth = 250;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    // const { admin } = useAuth()
+    const { admin, user } = useAuth()
     const { logOut } = useAuth()
     let { path, url } = useRouteMatch();
 
@@ -46,37 +48,63 @@ function Dashboard(props) {
             <Box sx={{ textAlign: 'left', pl: 2 }}>
                 {/* admin feature */}
 
-                <NavLink activeStyle
-                    ={activeStyle} className="admin-link-style" style={{ display: 'block', width: '100%', marginTop: '30px' }} to={`${url}/manageAllOrders`}><Button color="inherit"><span><i className="fas fa-list"></i></span> Manage Orders</Button></NavLink>
+                {admin ? <Box>
+                    <NavLink activeStyle
+                        ={activeStyle} className="admin-link-style" style={{ display: 'block', width: '100%', marginTop: '30px' }} to={`${url}/profile`}><Button color="inherit"><span><i class="fas fa-user-circle"></i></span> Profile</Button></NavLink>
 
-                <NavLink activeStyle
-                    ={activeStyle} className="admin-link-style" to={`${url}/addProduct`}><Button color="inherit"><span><i className="fas fa-file-medical"></i></span> Add Product</Button></NavLink>
-                <br />
-                <NavLink activeStyle
-                    ={activeStyle} className="admin-link-style" to={`${url}/makeAdmin`}><Button color="inherit"><span><i className="fas fa-user-plus"></i></span> Make Admin</Button></NavLink>
-                <br />
-                <NavLink activeStyle
-                    ={activeStyle} className="admin-link-style" to={`${url}/manageProducts`}><Button color="inherit"><span><i className="fas fa-cog"></i></span> Manage Products</Button></NavLink>
+                    <NavLink activeStyle
+                        ={activeStyle} className="admin-link-style" style={{ display: 'block', width: '100%' }} to={`${url}/manageAllOrders`}><Button color="inherit"><span><i className="fas fa-list"></i></span> Manage Orders</Button></NavLink>
+
+                    <NavLink activeStyle
+                        ={activeStyle} className="admin-link-style" to={`${url}/addProduct`}><Button color="inherit"><span><i className="fas fa-file-medical"></i></span> Add Product</Button></NavLink>
+                    <br />
+                    <NavLink activeStyle
+                        ={activeStyle} className="admin-link-style" to={`${url}/makeAdmin`}><Button color="inherit"><span><i className="fas fa-user-plus"></i></span> Make Admin</Button></NavLink>
+                    <br />
+                    <NavLink activeStyle
+                        ={activeStyle} className="admin-link-style" to={`${url}/manageProducts`}><Button color="inherit"><span><i className="fas fa-cog"></i></span> Manage Products</Button></NavLink>
+
+                    <NavLink activeStyle
+                        ={activeStyle} className="admin-link-style" to={`${url}/review`}><Button onClick={logOut} color="inherit"><span> <i class="fas fa-sign-out-alt"></i></span>  Log Out</Button></NavLink>
+
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                    <NavLink className="admin-link-style" to="/home"> <Button variant="contained"><span><i class="fas fa-hand-point-left"></i></span>
+                        Back To Home</Button></NavLink>
+                </Box>
+                    :
+                    <Box>
+                        <NavLink activeStyle
+                            ={activeStyle} className="admin-link-style" style={{ display: 'block', width: '100%', marginTop: '30px' }} to={`${url}/profile`}><Button color="inherit"><span><i class="fas fa-user-circle"></i></span> Profile</Button></NavLink>
+                        <NavLink activeStyle
+                            ={activeStyle} className="admin-link-style" to={`${url}/myOrders`}><Button color="inherit"><span><i className="fas fa-cog"></i></span> My Orders</Button></NavLink>
+                        <br />
+                        <NavLink activeStyle
+                            ={activeStyle} className="admin-link-style" to={`${url}/review`}><Button color="inherit"><span> <i className="fas fa-star"></i></span> Add Review</Button></NavLink>
+
+                        <NavLink activeStyle
+                            ={activeStyle} className="admin-link-style" to={`${url}/pay`}><Button color="inherit"><span><i className="fab fa-cc-amazon-pay"></i></span>  Payment</Button></NavLink>
+                        <br />
+
+                        <Button onClick={logOut} color="inherit"><span> <i class="fas fa-sign-out-alt"></i></span>  Log Out</Button>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <NavLink className="admin-link-style" to="/home"> <Button variant="contained"><span><i class="fas fa-hand-point-left"></i></span>
+                            Back To Home</Button></NavLink>
+                    </Box>
+
+                }
 
 
                 {/* user feature */}
-                <NavLink activeStyle
-                    ={activeStyle} className="admin-link-style" to={`${url}/pay`}><Button color="inherit"><span><i className="fab fa-cc-amazon-pay"></i></span>  Payment</Button></NavLink>
-                <br />
-                <NavLink activeStyle
-                    ={activeStyle} className="admin-link-style" to={`${url}/myOrders`}><Button color="inherit"><span><i className="fas fa-cog"></i></span> My Orders</Button></NavLink>
-                <br />
-                <NavLink activeStyle
-                    ={activeStyle} className="admin-link-style" to={`${url}/review`}><Button color="inherit"><span> <i className="fas fa-star"></i></span> Add Review</Button></NavLink>
 
-                <NavLink activeStyle
-                    ={activeStyle} className="admin-link-style" to={`${url}/review`}><Button onClick={logOut} color="inherit"><span> <i class="fas fa-sign-out-alt"></i></span>  Log Out</Button></NavLink>
-                <br />
-                <br />
-                <br />
-                <br />
-                <NavLink className="admin-link-style" to="/home"> <Button variant="contained"><span><i class="fas fa-hand-point-left"></i></span>
-                    Back To Home</Button></NavLink>
+
 
             </Box>
 
@@ -113,7 +141,9 @@ function Dashboard(props) {
                     <Typography variant="h6" sx={{ color: 'rgba(32, 58, 95, 1)' }} noWrap component="div">
                         Dashboard
                     </Typography>
+
                 </Toolbar>
+
             </AppBar>
             <Box
                 component="nav"
@@ -147,7 +177,7 @@ function Dashboard(props) {
                     {drawer}
                 </Drawer>
             </Box>
-            <Box style={{ backgroundColor: '#f4f7fc', paddingBottom: '300px' }}
+            <Box
                 component="main"
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
@@ -155,22 +185,25 @@ function Dashboard(props) {
 
                 <Switch>
                     {/* admin route */}
-                    <Route path={`${path}/manageAllOrders`}>
+                    <AdminRoute path={`${path}/manageAllOrders`}>
                         <ManageAllOrders />
-                    </Route>
-                    <Route path={`${path}/addProduct`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addProduct`}>
                         <AddProduct />
-                    </Route>
-                    <Route path={`${path}/makeAdmin`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin />
-                    </Route>
-                    <Route path={`${path}/manageProducts`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageProducts`}>
                         <ManageProducts />
-                    </Route>
+                    </AdminRoute>
 
                     {/* user route */}
                     <Route path={`${path}/pay`}>
                         <Pay />
+                    </Route>
+                    <Route path={`${path}/profile`}>
+                        <Profile />
                     </Route>
                     <Route path={`${path}/myOrders`}>
                         <MyOrders />

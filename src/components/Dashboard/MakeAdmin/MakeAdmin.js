@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://hidden-temple-16176.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -28,7 +28,7 @@ const MakeAdmin = () => {
         e.preventDefault()
     }
     return (
-        <div style={{ backgroundColor: 'white', boxShadow: '1px 1px 3px rgb(0 0 0 / 10%)', width: '70%', margin: 'auto', borderRadius: '20px' }}>
+        <div style={{ backgroundColor: 'white', boxShadow: '0 .5rem 1rem rgba(0,0,0,.15)', width: '70%', margin: 'auto', borderRadius: '20px' }}>
             <div className="py-3 mt-5">
                 <h2>Make Admin</h2>
                 {!isLoading && <form onSubmit={handleAdminSubmit}>

@@ -7,13 +7,13 @@ const Reviews = () => {
     const { user } = useAuth()
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://hidden-temple-16176.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [reviews])
     return (
         <div className="container mt-4">
-            <h2 style={{ color: '#052046', fontSize: '40px' }}>Check Out OurReviews</h2>
+            <h2 style={{ color: '#052046', fontSize: '40px' }}>Check Out Our Reviews</h2>
             <div className="row row-cols-1 row-cols-md-4 g-4">
 
                 {

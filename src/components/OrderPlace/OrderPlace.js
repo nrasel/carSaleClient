@@ -10,7 +10,7 @@ const OrderPlace = () => {
     const { user } = useAuth()
     const { name, img, price, desc } = orders
     useEffect(() => {
-        fetch(`http://localhost:5000/cars/${id}`)
+        fetch(`https://hidden-temple-16176.herokuapp.com/cars/${id}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [id, orders])
@@ -27,7 +27,7 @@ const OrderPlace = () => {
             status: 'pending'
         }
         console.log(data);
-        fetch('http://localhost:5000/order', {
+        fetch('https://hidden-temple-16176.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

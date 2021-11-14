@@ -7,7 +7,7 @@ const AddProduct = () => {
         console.log(data);
 
 
-        fetch('http://localhost:5000/product', {
+        fetch('https://hidden-temple-16176.herokuapp.com/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -27,7 +27,7 @@ const AddProduct = () => {
     return (
         <div >
             <div className="mt-3">
-                <div className="py-4" style={{ backgroundColor: 'white', boxShadow: '1px 1px 3px rgb(0 0 0 / 10%)', width: '70%', margin: 'auto', borderRadius: '20px' }}>
+                <div className="py-4" style={{ backgroundColor: 'white', boxShadow: '0 .5rem 1rem rgba(0,0,0,.15)', width: '70%', margin: 'auto', borderRadius: '20px' }}>
                     <h2>Add Products</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 

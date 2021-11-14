@@ -13,14 +13,14 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([])
     const { user } = useAuth()
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://hidden-temple-16176.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [orders])
     const handleDelete = (id) => {
         const proceed = window.confirm("Are You Sure To Delete?")
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://hidden-temple-16176.herokuapp.com/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -35,7 +35,7 @@ const MyOrders = () => {
 
     }
     return (
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} style={{ maxWidth: '60rem' }}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>

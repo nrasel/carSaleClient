@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 const Services = () => {
     const [cars, setCars] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/homeCars')
+        fetch('https://hidden-temple-16176.herokuapp.com/homeCars')
             .then(res => res.json())
             .then(data => setCars(data))
     }, [cars])
