@@ -13,8 +13,9 @@ const Registration = () => {
         reset()
     };
     return (
-        <div>
-            <form className="mt-5 pt-5" onSubmit={handleSubmit(onSubmit)}>
+        <div className="mt-5 pt-5">
+            <h3>Please Registration</h3>
+            <form onSubmit={handleSubmit(onSubmit)}>
 
                 <input placeholder="Name" className="form-control border-radius-change w-50 m-auto mb-3 mt-5"  {...register("name")} />
 
