@@ -61,7 +61,7 @@ const ManageAllOrders = () => {
                                 <p className="card-text">Price : ${order.productPrice}</p>
                                 <h6 style={{ color: '#28a745' }}>{order.status}</h6>
 
-                                <button className="btn  text-white" onClick={() => handleDelete(order._id)} style={{ backgroundColor: '#990000' }} >Cancel</button>
+                                <button className="btn me-1 text-white" onClick={() => handleDelete(order._id)} style={{ backgroundColor: '#990000' }} >Cancel</button>
 
                                 {order.status === 'pending' ?
                                     <button className="btn text-white" onClick={() => handleStatus(order._id)} style={{ backgroundColor: '#990000' }} >Pending</button>
