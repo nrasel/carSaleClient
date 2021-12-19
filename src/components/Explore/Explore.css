@@ -7,11 +7,33 @@
 .price{
     color: #28a745;
     font-size: 24px;
+    font-family: 'Odibee Sans';
+
 }
 .card-title{
-    color: #304461;
-    font-size: 28px;
+    color: #052046;
+    font-size: 26px;
+    font-weight: 400;
+    font-family: 'Odibee Sans';
+    line-height: 1.5;
 }
 .card-text{
     color: #646464;
+}
+hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.car-date{
+    color: #707073;
+}
+.flat-icon{
+    color: #707073;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.flat-icon-width{
+    width: 19px;
 }

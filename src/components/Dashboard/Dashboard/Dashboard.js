@@ -29,7 +29,7 @@ const drawerWidth = 250;
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { admin, user } = useAuth()
+    const { admin } = useAuth()
     const { logOut } = useAuth()
     let { path, url } = useRouteMatch();
 

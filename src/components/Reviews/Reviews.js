@@ -18,7 +18,7 @@ const Reviews = () => {
 
                 {
                     reviews.map(review =>
-                        <div className="col">
+                        <div key={review._id} className="col">
                             <div style={{ boxShadow: '0 .5rem 1rem rgba(0,0,0,.15)', padding: '30px 0', borderRadius: '10px' }} className="card h-100 card-style border-0 text-start">
                                 <div className="card-body">
                                     <h5 className="card-title">{review.userName}</h5>

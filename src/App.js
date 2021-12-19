@@ -15,6 +15,7 @@ import Registration from './components/Registration/Registration';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Footer from './components/Footer/Footer';
+import Reviews from './components/Reviews/Reviews';
 
 function App() {
   return (

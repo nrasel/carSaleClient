@@ -26,7 +26,7 @@ const useFirebase = () => {
                 }).catch((error) => {
 
                 });
-                history.replace('/')
+                history.replace('/dashboard/profile')
             })
             .catch((error) => {
                 setAuthError(error.message)
@@ -38,7 +38,7 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setAuthError('')
-                const destination = location?.state?.from || '/'
+                const destination = location?.state?.from || '/dashboard/profile'
                 history.replace(destination)
             }).catch((error) => {
                 setAuthError(error.message)
