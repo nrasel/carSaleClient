@@ -1,0 +1,34 @@
+.rentalcar{
+    color: #052046;
+    font-family: Odibee Sans,cursive;
+    font-size: 60px;
+    position: relative;
+}
+
+.rentalinfo p{
+    font-size: 17px;
+    color: #707073;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 22px;
+}
+.imgs-card{
+    position: relative;
+}
+.offer{
+    position: absolute;
+    top: -106px;
+    left: -250px;
+    background: #ea4335;
+    color: white;
+    padding: 10px;
+    font-size: 22px;
+    font-family: Odibee Sans,cursive;
+}
+.img-price{
+    position: absolute;
+    top: 76px;
+    left: -242px;
+    font-size: 23px;
+    color: white;
+}

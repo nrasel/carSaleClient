@@ -1,0 +1,22 @@
+[
+    {
+        "id":"01",
+        "title":"Buy and Sale Vehiclese",
+        "desc":"We buy and sale barand new car and also used car of any brand",
+        "img":"https://i.ibb.co/m4HBL9j/car-1.png"
+    },
+    {
+        "id":"02",
+        "title":"Vehicles Rental Service",
+        "desc":"We buy and sale barand new car and also used car of any brand",
+        "img":"https://i.ibb.co/Mp63z5G/service.png"
+    },
+    {
+        "id":"03",
+        "title":"Vehicles Servicing",
+        "desc":"We buy and sale barand new car and also used car of any brand",
+        "img":"https://i.ibb.co/8xLycW2/rent-1.png"
+    }
+]
+
+

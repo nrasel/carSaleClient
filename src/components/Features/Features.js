@@ -1,11 +1,15 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './Feature.css'
+
+AOS.init()
 
 const Features = () => {
     const [features,setFestures]=useState([])
     useEffect(()=>{
-        fetch('/extra.json')
+        fetch('./extra.json')
         .then(res=>res.json())
         .then(data=>setFestures(data))
     },[])
@@ -16,7 +20,7 @@ const Features = () => {
                 features.map(feature=> <div>
                     
                         <div className="col extra-bg">
-                            <div className="card  border-0 h-100">
+                            <div data-aos="flip-left" data-aos-duration="1000" className="card  border-0 h-100">
                                 <div className="card-body position-relative text-start">
                                     <h5 className='shadow-number'>{feature.shadow}</h5>
                                     <h5 className="feature-title">{feature.title}</h5>

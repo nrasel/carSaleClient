@@ -1,0 +1,39 @@
+[
+
+	{
+		"id":  1,
+		"image":  "https://i.ibb.co/gwJGkn5/5.png",
+		"title":  "Awesome Classic Model",
+		"offer":"30% OFF",
+        "price":"736"
+
+	},
+	{
+		"id":  2,
+		"image":  "https://i.ibb.co/dtjGPyL/4.png",
+		"title":  "Awesome Classic Model",
+		"offer":"25% OFF",
+        "price":"636"
+	},
+	{
+		"id":  3,
+		"image":  "https://i.ibb.co/TwDw5fV/3.png",
+		"title":  "Awesome Classic Model",
+		"offer":"17% OFF",
+        "price":"436"
+	},
+	{
+		"id":  4,
+		"image":  "https://i.ibb.co/JBfWJ1v/2.png",
+		"title":  "Awesome Classic Model",
+		"offer":"20% OFF",
+        "price":"836"
+	},
+	{
+		"id":  4,
+		"image":  "https://i.ibb.co/G0sBqWy/1.png",
+		"title":  "Awesome Classic Model",
+		"offer":"14% OFF",
+        "price":"936"
+	}
+]

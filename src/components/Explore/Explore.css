@@ -37,3 +37,12 @@ hr{
 .flat-icon-width{
     width: 19px;
 }
+.card-img-top{
+    transition: 0.5s;
+}
+.card-style{
+    overflow: hidden;
+}
+.card-style:hover .card-img-top{
+    transform: scale(1.1);
+}

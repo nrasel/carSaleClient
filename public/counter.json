@@ -1,0 +1,20 @@
+[
+    {
+        "id":"01",
+        "img":"https://i.ibb.co/5FpF7DC/car.png",
+        "title":"Total Awards",
+        "count":"32"
+    },
+    {
+        "id":"01",
+        "img":"https://i.ibb.co/P1Kyqmn/trophy.png",
+        "title":"Car Sold Month",
+        "count":"1200"
+    },
+    {
+        "id":"01",
+        "img":"https://i.ibb.co/TkDKBJn/steering-wheel.png",
+        "title":"Available Brands",
+        "count":"20"
+    }
+]

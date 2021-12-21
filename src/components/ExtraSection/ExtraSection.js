@@ -1,14 +1,18 @@
 import React from 'react';
 import { Container, Grid, Typography } from '@mui/material';
 import car from '../../images/4.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init()
 
 const ExtraSection = () => {
     return (
 
-        <Container sx={{ mt: 7 }}>
+        <Container sx={{ mt: 7,my: 6}}>
 
             <Grid container spacing={2}>
-                <Grid item sx={{ mt: 10, textAlign: 'end', }} xs={12} sm={12} md={4}>
+                <Grid data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos="fade-right" item sx={{ mt: 10, textAlign: 'end', }} xs={12} sm={12} md={4}>
                     <Typography sx={{ color: 'rgba(5, 32, 70, 1)' }} variant="h5">
                         Experience support team <i className="far fa-dot-circle"></i>
                     </Typography>
@@ -29,9 +33,9 @@ const ExtraSection = () => {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={12} md={4}>
-                    <img style={{ width: '100%' }} src={car} alt="" />
+                    <img data-aos="zoom-out" style={{ width: '100%' }} src={car} alt="" />
                 </Grid>
-                <Grid sx={{ mt: 10, textAlign: 'start', }} item xs={12} sm={12} md={4}>
+                <Grid data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" sx={{ mt: 10, textAlign: 'start', }} item xs={12} sm={12} md={4}>
                     <Typography sx={{ color: 'rgba(5, 32, 70, 1)' }} variant="h5">
                         <i className="far fa-dot-circle"></i> Hight technology instrument
                     </Typography>
