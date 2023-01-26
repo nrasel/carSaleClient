@@ -20,9 +20,9 @@ const CustomerReview = () => {
     const { user } = useAuth()
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('https://hidden-temple-16176.herokuapp.com/reviews')
-            .then(res => res.json())
-            .then(data => setReviews(data))
+        fetch("https://odd-puce-cygnet-hat.cyclic.app/reviews")
+          .then((res) => res.json())
+          .then((data) => setReviews(data));
     }, [reviews])
     return (
         <div className="bg-white pt-5">

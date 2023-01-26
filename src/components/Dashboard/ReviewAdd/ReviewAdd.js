@@ -12,21 +12,21 @@ const ReviewAdd = () => {
             userName: user.displayName,
             userEmail: user.email
         }
-        fetch('https://hidden-temple-16176.herokuapp.com/review', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(review)
+        fetch("https://odd-puce-cygnet-hat.cyclic.app/review", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(review),
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.insertedId) {
-                    alert('Review Add Successful!')
-                    reset()
-                }
-            })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.insertedId) {
+              alert("Review Add Successful!");
+              reset();
+            }
+          });
 
     };
     return (

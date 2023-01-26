@@ -6,24 +6,26 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([])
     const { user } = useAuth()
     useEffect(() => {
-        fetch('https://hidden-temple-16176.herokuapp.com/orders')
-            .then(res => res.json())
-            .then(data => setOrders(data))
+        fetch("https://odd-puce-cygnet-hat.cyclic.app/orders")
+          .then((res) => res.json())
+          .then((data) => setOrders(data));
     }, [orders])
     const handleDelete = (id) => {
         const proceed = window.confirm("Are You Sure To Delete?")
         if (proceed) {
-            fetch(`https://hidden-temple-16176.herokuapp.com/orders/${id}`, {
-                method: 'DELETE'
+            fetch(`https://odd-puce-cygnet-hat.cyclic.app/orders/${id}`, {
+              method: "DELETE",
             })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        alert('Delete Successful')
-                        const remainingOrders = orders.filter(order => order._id !== id)
-                        setOrders(remainingOrders)
-                    }
-                })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.deletedCount > 0) {
+                  alert("Delete Successful");
+                  const remainingOrders = orders.filter(
+                    (order) => order._id !== id
+                  );
+                  setOrders(remainingOrders);
+                }
+              });
         }
 
     }

@@ -10,9 +10,9 @@ const OrderPlace = () => {
     const { user } = useAuth()
     const { name, img, price, desc } = orders
     useEffect(() => {
-        fetch(`https://hidden-temple-16176.herokuapp.com/cars/${id}`)
-            .then(res => res.json())
-            .then(data => setOrders(data))
+        fetch(`https://odd-puce-cygnet-hat.cyclic.app/cars/${id}`)
+          .then((res) => res.json())
+          .then((data) => setOrders(data));
     }, [id, orders])
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -27,22 +27,21 @@ const OrderPlace = () => {
             status: 'pending'
         }
         console.log(data);
-        fetch('https://hidden-temple-16176.herokuapp.com/order', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(orderDetails)
+        fetch("https://odd-puce-cygnet-hat.cyclic.app/order", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(orderDetails),
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.insertedId) {
-                    alert('add successful')
-                    reset()
-                }
-
-            })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.insertedId) {
+              alert("add successful");
+              reset();
+            }
+          });
 
     };
     return (

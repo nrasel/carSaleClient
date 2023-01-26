@@ -10,20 +10,20 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('https://hidden-temple-16176.herokuapp.com/users/admin', {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
+        fetch("https://odd-puce-cygnet-hat.cyclic.app/users/admin", {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
         })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount) {
-                    console.log(data);
-                    alert("Make Admin Success!")
-                }
-            })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.modifiedCount) {
+              console.log(data);
+              alert("Make Admin Success!");
+            }
+          });
 
         e.preventDefault()
     }

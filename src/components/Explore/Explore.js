@@ -14,9 +14,9 @@ AOS.init()
 const Explore = () => {
     const [cars, setCars] = useState([])
     useEffect(() => {
-        fetch('https://hidden-temple-16176.herokuapp.com/cars')
-            .then(res => res.json())
-            .then(data => setCars(data))
+        fetch("https://odd-puce-cygnet-hat.cyclic.app/cars")
+          .then((res) => res.json())
+          .then((data) => setCars(data));
     }, [cars])
     return (
         <div className="container">
